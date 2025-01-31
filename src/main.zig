@@ -61,8 +61,8 @@ fn updateBall() void {
 
 	// player paddle hit
 	if (ballDX < 0
-		and ballX <= paddleWidth * 2
-		and ((ballY+ballSize) >= playerPaddleY and ballY < (playerPaddleY+paddleHeight))) {
+	and ballX <= paddleWidth * 2
+	and ((ballY+ballSize) >= playerPaddleY and ballY < (playerPaddleY+paddleHeight))) {
 		ballDX = (-ballDX)+1;
 		ballDY += if (ballDY < 0) -1 else 1;
 		return;
@@ -70,8 +70,8 @@ fn updateBall() void {
 
 	//cpu paddle hit
 	if (ballDX > 0
-		and (ballX+ballSize) >= (windowWidth-(paddleWidth*2))
-		and ((ballY+ballSize) >= cpuPaddleY and ballY < (cpuPaddleY+paddleHeight))) {
+	and (ballX+ballSize) >= (windowWidth-(paddleWidth*2))
+	and ((ballY+ballSize) >= cpuPaddleY and ballY < (cpuPaddleY+paddleHeight))) {
 		ballDX = (-ballDX)-1;
 		ballDY += if (ballDY < 0) -1 else 1;
 		return;
@@ -92,17 +92,17 @@ fn updateBall() void {
 }
 
 fn playerServe() void {
-		ballX = 3 * paddleWidth;
-		ballY = ballStartY;
-		ballDX = ballBaseSpeed;
-		ballDY = -ballBaseSpeed;
+	ballX = 3 * paddleWidth;
+	ballY = ballStartY;
+	ballDX = ballBaseSpeed;
+	ballDY = -ballBaseSpeed;
 }
 
 fn cpuServe() void {
-		ballX = windowWidth - (3 * paddleWidth);
-		ballY = ballStartY;
-		ballDX = -ballBaseSpeed;
-		ballDY = -ballBaseSpeed;
+	ballX = windowWidth - (3 * paddleWidth);
+	ballY = ballStartY;
+	ballDX = -ballBaseSpeed;
+	ballDY = -ballBaseSpeed;
 }
 
 fn updatePlayerPaddle() void {
